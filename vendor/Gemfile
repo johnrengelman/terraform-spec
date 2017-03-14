@@ -1,0 +1,7 @@
+source 'https://rubygems.org'
+
+gem 'test-kitchen', '1.15.0'
+gem 'kitchen-terraform', '0.6.1'
+gem 'awspec', '0.66.1'
+gem 'kitchen-verifier-awspec', '0.1.0'
+gem 'terraform-utils', :path => "/vendor/gems/terraform-utils"
