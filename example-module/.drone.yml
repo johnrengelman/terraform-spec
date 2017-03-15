@@ -1,0 +1,10 @@
+pipeline:
+  build:
+    image: johnrengelman/terraform-spec:0.8.8-1
+    commands:
+      - bundle exec kitchen test --destroy=always --color
+    environment:
+      - USER=drone
+    when:
+      branch: [ master, feature/* ]
+      event: [ push, pull_request ]

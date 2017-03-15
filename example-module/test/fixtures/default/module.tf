@@ -1,0 +1,3 @@
+module "iut" {
+  source = "../../../"
+}

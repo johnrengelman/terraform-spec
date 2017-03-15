@@ -1,0 +1,27 @@
+---
+driver:
+  name: terraform
+
+platforms:
+  - name: aws
+
+suites:
+  - name: default
+    verifier:
+      name: terraform
+      format: doc
+      groups:
+        - name: default
+          attributes:
+            build_number: build_number
+          controls:
+            - default
+    provisioner:
+      name: terraform
+      apply_timeout: 600
+      color: true
+      directory: >-
+        test/fixtures/default
+      variables:
+        user: <%= ENV['USER'] %>
+        build_number: <%= ENV['DRONE_BUILD_NUMBER'] %>
